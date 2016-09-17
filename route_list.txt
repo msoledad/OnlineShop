@@ -1,0 +1,23 @@
++--------+-----------+------------------------+--------------+------------------------------------------------------------------------+--------------+
+| Domain | Method    | URI                    | Name         | Action                                                                 | Middleware   |
++--------+-----------+------------------------+--------------+------------------------------------------------------------------------+--------------+
+|        | GET|HEAD  | /                      |              | Closure                                                                | web          |
+|        | POST      | User                   | User.store   | App\Http\Controllers\UserController@store                              | web,auth     |
+|        | GET|HEAD  | User                   | User.index   | App\Http\Controllers\UserController@index                              | web,auth     |
+|        | GET|HEAD  | User/create            | User.create  | App\Http\Controllers\UserController@create                             | web,auth     |
+|        | GET|HEAD  | User/{User}            | User.show    | App\Http\Controllers\UserController@show                               | web,auth     |
+|        | PUT|PATCH | User/{User}            | User.update  | App\Http\Controllers\UserController@update                             | web,auth     |
+|        | DELETE    | User/{User}            | User.destroy | App\Http\Controllers\UserController@destroy                            | web,auth     |
+|        | GET|HEAD  | User/{User}/edit       | User.edit    | App\Http\Controllers\UserController@edit                               | web,auth     |
+|        | GET|HEAD  | api/user               |              | Closure                                                                | api,auth:api |
+|        | GET|HEAD  | home                   |              | App\Http\Controllers\HomeController@index                              | web,auth     |
+|        | GET|HEAD  | login                  | login        | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
+|        | POST      | login                  |              | App\Http\Controllers\Auth\LoginController@login                        | web,guest    |
+|        | POST      | logout                 |              | App\Http\Controllers\Auth\LoginController@logout                       | web          |
+|        | POST      | password/email         |              | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web,guest    |
+|        | POST      | password/reset         |              | App\Http\Controllers\Auth\ResetPasswordController@reset                | web,guest    |
+|        | GET|HEAD  | password/reset         |              | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web,guest    |
+|        | GET|HEAD  | password/reset/{token} |              | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web,guest    |
+|        | GET|HEAD  | register               |              | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest    |
+|        | POST      | register               |              | App\Http\Controllers\Auth\RegisterController@register                  | web,guest    |
++--------+-----------+------------------------+--------------+------------------------------------------------------------------------+--------------+
