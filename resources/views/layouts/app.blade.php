@@ -55,7 +55,8 @@
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                              
+                                <img src="{{ Auth::user()->avatar }}" class="img-circle" alt="Avatar" width="40" height="40">
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
