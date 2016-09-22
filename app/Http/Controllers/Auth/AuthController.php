@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
+
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Socialite;
+use App\User;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -30,6 +32,18 @@ class AuthController extends Controller
     {
         $user = Socialite::driver('google')->user();
 
+        $data = [
+            'sid'   => $user->getId(),
+            'email' => $user->getEmail(),
+            'nick'  => $user->getNickname(),
+            'name'  => $user->getName(),
+            'avatar'=> $user->getAvatar(),
+            'password'=> 'Google'
+        ];
+
+        Auth::login(User::firstOrCreate($data));
+        return redirect()->to('/home');
         // $user->token;
+       
     }
 }

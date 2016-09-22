@@ -9,7 +9,7 @@
                               		
                 		<tbody>
                 			<tr>
-                				<td rowspan="5">Foto</td>
+                				<td rowspan="5"><img src="{{ $user->avatar }}"></td>
                 				
                 			</tr>
                 			<tr>
